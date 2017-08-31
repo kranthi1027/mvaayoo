@@ -5,7 +5,7 @@ module Mvaayoo
   def self.send_message msg, receipient_no
   #  message = ["00", msg.each_byte.map { |b| b.to_s(16) }.join("00")].join
     message = msg
-    http_conn '/mvaayooapi/MessageCompose', ["user=#{MVAAYOO_USER}:#{MVAAYOO_PASSWORD}", "receipientno=#{receipient_no}", "msgtype=4", "senderID=#{SENDER_ID}", "dcs=0", "msgtxt=#{message}", "ishex=1", "state=4", "msgtype=4", "ishex=1"] 
+    http_conn '/mvaayooapi/MessageCompose', ["user=#{MVAAYOO_USER}:#{MVAAYOO_PASSWORD}", "senderID=#{SENDER_ID}", "receipientno=#{receipient_no}", "dcs=0", "msgtxt=#{message}", "state=4"] 
   end
  
   # check balance
